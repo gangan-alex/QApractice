@@ -12,16 +12,7 @@ public class Combined {
 	JButton buttonDiv = new JButton("/");
 	JButton buttonMinus = new JButton("-");
 	JButton buttonMulti = new JButton("x");
-	JButton numButton0 = new JButton("0");
-	JButton numButton1 = new JButton("1");
-	JButton numButton2 = new JButton("2");
-	JButton numButton3 = new JButton("3");
-	JButton numButton4 = new JButton("4");
-	JButton numButton5 = new JButton("5");
-	JButton numButton6 = new JButton("6");
-	JButton numButton7 = new JButton("7");
-	JButton numButton8 = new JButton("8");
-	JButton numButton9 = new JButton("9");
+	JButton numButton[] = new JButton[10];
 
 	Combined() {
 		JPanel windowContent = new JPanel();
@@ -33,16 +24,13 @@ public class Combined {
 		GridLayout gl = new GridLayout(4, 3);
 		p1.setLayout(gl);
 
-		p1.add(numButton0);
-		p1.add(numButton1);
-		p1.add(numButton2);
-		p1.add(numButton3);
-		p1.add(numButton4);
-		p1.add(numButton5);
-		p1.add(numButton6);
-		p1.add(numButton7);
-		p1.add(numButton8);
-		p1.add(numButton9);
+		for (int i = 0; i < 10; i++) {
+//			String digits = new Integer(i).toString();
+			Integer digits = i;
+			digits.Integer.toString(i)
+			numButton[i] = new JButton(digits);
+			p1.add(numButton[i]);
+		}
 		p1.add(buttonPoint);
 		p1.add(buttonEqual);
 		windowContent.add("Center", p1);
@@ -60,7 +48,7 @@ public class Combined {
 		// делаем размер окна достаточным
 		// дл€ того, чтобы вместить все компоненты
 		frame.pack();
-		// отображаем окно
+		// Ќаконец, отображаем окно
 		frame.setVisible(true);
 
 		Clicked calcEngine = new Clicked();
@@ -68,16 +56,8 @@ public class Combined {
 		buttonMinus.addActionListener(calcEngine);
 		buttonMulti.addActionListener(calcEngine);
 		buttonDiv.addActionListener(calcEngine);
-		numButton0.addActionListener(calcEngine);
-		numButton1.addActionListener(calcEngine);
-		numButton2.addActionListener(calcEngine);
-		numButton3.addActionListener(calcEngine);
-		numButton4.addActionListener(calcEngine);
-		numButton5.addActionListener(calcEngine);
-		numButton6.addActionListener(calcEngine);
-		numButton7.addActionListener(calcEngine);
-		numButton8.addActionListener(calcEngine);
-		numButton9.addActionListener(calcEngine);
+		for (int i = 0; i < 10; i++) {
+		numButton[i].addActionListener(calcEngine);}
 		buttonPoint.addActionListener(calcEngine);
 		buttonEqual.addActionListener(calcEngine);
 	}
