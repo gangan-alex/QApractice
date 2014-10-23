@@ -21,13 +21,11 @@ public class Combined {
 		displayField.setHorizontalAlignment(JTextField.RIGHT);
 		windowContent.add("North", displayField);
 		JPanel p1 = new JPanel();
-		GridLayout gl = new GridLayout(4, 3);
-		p1.setLayout(gl);
 
+		GridLayout NumGrid = new GridLayout(4, 3);
+		p1.setLayout(NumGrid);
 		for (int i = 0; i < 10; i++) {
-//			String digits = new Integer(i).toString();
-			Integer digits = i;
-			digits.Integer.toString(i)
+			String digits = new Integer(i).toString();
 			numButton[i] = new JButton(digits);
 			p1.add(numButton[i]);
 		}
@@ -36,19 +34,21 @@ public class Combined {
 		windowContent.add("Center", p1);
 
 		JPanel ops = new JPanel();
-		GridLayout g2 = new GridLayout(4, 1);
-		ops.setLayout(g2);
+		GridLayout ActionGrid = new GridLayout(4, 1);
+		ops.setLayout(ActionGrid);
 		ops.add(buttonPlus);
 		ops.add(buttonMinus);
 		ops.add(buttonMulti);
 		ops.add(buttonDiv);
+
 		windowContent.add("East", ops);
 		JFrame frame = new JFrame("Calculator");
 		frame.setContentPane(windowContent);
-		// делаем размер окна достаточным
-		// для того, чтобы вместить все компоненты
+
+		// making window size enough to show all the components
 		frame.pack();
-		// Наконец, отображаем окно
+
+		// making the window visible
 		frame.setVisible(true);
 
 		Clicked calcEngine = new Clicked();
@@ -56,8 +56,10 @@ public class Combined {
 		buttonMinus.addActionListener(calcEngine);
 		buttonMulti.addActionListener(calcEngine);
 		buttonDiv.addActionListener(calcEngine);
+
 		for (int i = 0; i < 10; i++) {
 		numButton[i].addActionListener(calcEngine);}
+
 		buttonPoint.addActionListener(calcEngine);
 		buttonEqual.addActionListener(calcEngine);
 	}
