@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
 
-public class Combined {
+private class Combined {
 	JTextField displayField = new JTextField();
 	JButton buttonPoint = new JButton(".");
 	JButton buttonEqual = new JButton("=");
