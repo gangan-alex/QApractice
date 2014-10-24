@@ -20,18 +20,18 @@ private class Combined {
 		windowContent.setLayout(bl);
 		displayField.setHorizontalAlignment(JTextField.RIGHT);
 		windowContent.add("North", displayField);
-		JPanel p1 = new JPanel();
+		JPanel PanelUno = new JPanel();
 
 		GridLayout NumGrid = new GridLayout(4, 3);
-		p1.setLayout(NumGrid);
+		PanelUno.setLayout(NumGrid);
 		for (int i = 0; i < 10; i++) {
 			String digits = new Integer(i).toString();
 			numButton[i] = new JButton(digits);
-			p1.add(numButton[i]);
+			PanelUno.add(numButton[i]);
 		}
-		p1.add(buttonPoint);
-		p1.add(buttonEqual);
-		windowContent.add("Center", p1);
+		PanelUno.add(buttonPoint);
+		PanelUno.add(buttonEqual);
+		windowContent.add("Center", PanelUno);
 
 		JPanel ops = new JPanel();
 		GridLayout ActionGrid = new GridLayout(4, 1);
